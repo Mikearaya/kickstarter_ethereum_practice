@@ -28,8 +28,6 @@ let jsonContractSource = JSON.stringify({
 const ex = JSON.parse(solc.compile(jsonContractSource)).contracts["Task"];
 fs.ensureDirSync(buildPath);
 
-console.log(ex);
-
 for (let contract in ex) {
 	fs.outputJsonSync(path.resolve(buildPath, contract + ".json"), ex[contract]);
 }
