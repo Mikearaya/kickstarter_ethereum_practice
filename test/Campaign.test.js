@@ -16,11 +16,11 @@ let campaign;
 /* console.log(compiledFactory.evm.bytecode["object"]); */
 beforeEach(async () => {
 	accounts = await web3.eth.getAccounts();
-	const ff = web3.utils.toHex(compiledFactory.evm.bytecode.object);
-	console.log(ff);
+	console.log(web3.utils.toHex(compiledFactory.evm.bytecode.object));
+
 	factory = await new web3.eth.Contract(compiledFactory.abi)
 		.deploy({
-			data: ff
+			data: web3.utils.toHex(compiledFactory.evm.bytecode.object)
 		})
 		.send({ from: accounts[0], gas: "1000000" });
 
