@@ -14,7 +14,7 @@
 	"dependencies": {
 		"fs-extra": "^8.1.0",
 		"ganache-cli": "^6.7.0",
-		"mocha": "^6.2.1",
+		"mocha": "^10.2.0",
 		"solc": "^0.5.12",
 		"web3": "^1.2.1"
 	}
